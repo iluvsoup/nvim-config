@@ -5,8 +5,7 @@ return {
         config = function()
             local trouble = require("trouble")
 
-            trouble.setup({
-            })
+            trouble.setup({})
 
             vim.keymap.set("n", "<leader>xz", function() trouble.open() end)
             vim.keymap.set("n", "<leader>xw", function() trouble.open("workspace_diagnostics") end)
