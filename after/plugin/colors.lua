@@ -113,10 +113,12 @@ local function saveThemeData()
     end
 end
 
-function ToggleTheme()
-    currentThemeIndex = currentThemeIndex + 1
+function CycleTheme(direction)
+    currentThemeIndex = currentThemeIndex + direction
     if currentThemeIndex > #themes then
         currentThemeIndex = 1
+    elseif currentThemeIndex < 1 then
+        currentThemeIndex = #themes
     end
 
     ApplyTheme(themes[currentThemeIndex])
@@ -141,7 +143,12 @@ vim.api.nvim_create_autocmd({ "VimLeavePre" }, {
     end
 })
 
-vim.keymap.set("n", "§", ToggleTheme)
-vim.keymap.set("n", "<leader>§", ToggleTransparentBackground)
+vim.keymap.set({ "n", "x" }, "§", function()
+    CycleTheme(1)
+end)
+vim.keymap.set({ "n", "x" }, "½", function()
+    CycleTheme(-1)
+end)
+vim.keymap.set({ "n", "x" }, "<leader>§", ToggleTransparentBackground)
 
 ApplyTheme(themes[currentThemeIndex], transparentBackground == 1)
