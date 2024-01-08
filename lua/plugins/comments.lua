@@ -6,15 +6,15 @@ return {
         opts = {
             toggler = {
                 ---Line-comment toggle keymap
-                line = 'öö',
+                line = '\\\\',
                 ---Block-comment toggle keymap
-                block = 'ÖÖ',
+                block = '||',
             },
             opleader = {
                 ---Line-comment keymap
-                line = 'ö',
+                line = '\\',
                 ---Block-comment keymap
-                block = 'Ö',
+                block = '|',
             },
             mappings = {
                 ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`

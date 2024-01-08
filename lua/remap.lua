@@ -4,8 +4,10 @@ vim.keymap.set("n", "<leader>k", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- The ~ key is really hard to press on swedish keyboards
-vim.keymap.set({ "n", "v" }, "<C-l>", "~")
+vim.keymap.set({ "n", "x" }, "<Tab>", ">")
+vim.keymap.set({ "n", "x" }, "<S-Tab>", "<")
+vim.keymap.set("n", "<Tab><Tab>", ">>")
+vim.keymap.set("n", "<S-Tab><S-Tab>", "<<")
 
 vim.api.nvim_create_autocmd('filetype', {
     pattern = "netrw",

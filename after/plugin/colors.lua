@@ -143,12 +143,11 @@ vim.api.nvim_create_autocmd({ "VimLeavePre" }, {
     end
 })
 
-vim.keymap.set({ "n", "x" }, "§", function()
+vim.keymap.set("n", "<C-Right>", function()
     CycleTheme(1)
 end)
-vim.keymap.set({ "n", "x" }, "½", function()
+vim.keymap.set("n", "<C-Left>", function()
     CycleTheme(-1)
 end)
-vim.keymap.set({ "n", "x" }, "<leader>§", ToggleTransparentBackground)
 
 ApplyTheme(themes[currentThemeIndex], transparentBackground == 1)
