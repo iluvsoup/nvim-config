@@ -9,6 +9,9 @@ vim.keymap.set({ "n", "x" }, "<S-Tab>", "<")
 vim.keymap.set("n", "<Tab><Tab>", ">>")
 vim.keymap.set("n", "<S-Tab><S-Tab>", "<<")
 
+-- map alt+enter to new line above
+vim.keymap.set("i", "<a-CR>", "<Esc>O")
+
 vim.api.nvim_create_autocmd('filetype', {
     pattern = "netrw",
     desc = "Better mappings for netrw",
@@ -40,3 +43,9 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 
 vim.keymap.set("n", "Q", "<nop>")
+
+-- use ctrl+[hjlk] to switch between splits
+vim.keymap.set("n", "<C-h>", ":wincmd h<Enter>", { silent = true })
+vim.keymap.set("n", "<C-j>", ":wincmd j<Enter>", { silent = true })
+vim.keymap.set("n", "<C-k>", ":wincmd k<Enter>", { silent = true })
+vim.keymap.set("n", "<C-l>", ":wincmd l<Enter>", { silent = true })

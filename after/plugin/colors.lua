@@ -59,9 +59,12 @@ function ApplyTheme(color, transparent_background)
 
     -- the ~'s
     InheritHighlight("EndOfBuffer", "LineNr", {})
+
+    -- InheritHighlight("CmpItemMenu", "CmpItemAbbr", {})
 end
 
 local themes = {
+    "catppuccin-latte",
     "catppuccin-mocha",
     "catppuccin-frappe",
     "catppuccin-macchiato",
@@ -80,6 +83,8 @@ local themes = {
 
     "rose-pine-main",
     "rose-pine-moon",
+
+    "codedark",
 }
 
 local currentThemeIndex = 1

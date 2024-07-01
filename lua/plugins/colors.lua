@@ -33,5 +33,6 @@ return {
     { "folke/tokyonight.nvim",    lazy = true },
     { "sainnhe/sonokai",          lazy = true },
     { "AlexvZyl/nordic.nvim",     lazy = true },
-    { "sainnhe/everforest",       lazy = true }
+    { "sainnhe/everforest",       lazy = true },
+    { "tomasiser/vim-code-dark",  lazy = true },
 }

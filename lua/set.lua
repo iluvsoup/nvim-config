@@ -11,7 +11,30 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 -- disable auto comment on new line
-vim.opt.formatoptions:remove({ 'r', 'o' })
+--[[
+From :help fo-table:
+
+You can use the 'formatoptions' option  to influence how Vim formats text.
+'formatoptions' is a string that can contain any of the letters below.  The
+default setting is "tcq".  You can separate the option letters with commas for
+readability.
+
+letter  meaning when present in 'formatoptions'
+
+t       Auto-wrap text using textwidth
+c       Auto-wrap comments using textwidth, inserting the current comment
+        leader automatically.
+r       Automatically insert the current comment leader after hitting
+        <Enter> in Insert mode.
+o       Automatically insert the current comment leader after hitting 'o' or
+        'O' in Normal mode.
+...
+--]]
+
+-- vim.opt.formatoptions:remove({ 'c', 'r', 'o' }) -- This didn't work
+-- these two are probably identical but who cares
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 vim.opt.swapfile = false
 vim.opt.backup = false
