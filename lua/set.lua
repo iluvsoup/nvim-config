@@ -1,3 +1,7 @@
+-- vim.opt.mouse = ""
+
+vim.opt.hidden = true
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 

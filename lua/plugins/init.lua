@@ -1,3 +1,4 @@
 return {
-    { 'theprimeagen/vim-be-good' }
+    { 'theprimeagen/vim-be-good' },
+    { 'tpope/vim-surround' }
 }

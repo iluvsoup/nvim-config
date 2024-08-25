@@ -27,19 +27,19 @@ function InheritHighlight(name, source, settings)
     vim.api.nvim_set_hl(0, name, settings)
 end
 
--- Stole this too
-function GetHl(name)
-    local ok, hl = pcall(vim.api.nvim_get_hl_by_name, name, true)
-    if not ok then
-        return
-    end
-    for _, key in pairs({ "foreground", "background", "special" }) do
-        if hl[key] then
-            hl[key] = string.format("#%06x", hl[key])
-        end
-    end
-    return hl
-end
+-- -- Stole this too
+-- function GetHl(name)
+--     local ok, hl = pcall(vim.api.nvim_get_hl_by_name, name, true)
+--     if not ok then
+--         return
+--     end
+--     for _, key in pairs({ "foreground", "background", "special" }) do
+--         if hl[key] then
+--             hl[key] = string.format("#%06x", hl[key])
+--         end
+--     end
+--     return hl
+-- end
 
 function ApplyTheme(color, transparent_background)
     color = color or "tokyonight-night"
@@ -64,10 +64,10 @@ function ApplyTheme(color, transparent_background)
 end
 
 local themes = {
-    "catppuccin-latte",
     "catppuccin-mocha",
     "catppuccin-frappe",
     "catppuccin-macchiato",
+    "catppuccin-latte",
 
     "kanagawa-wave",
     "kanagawa-dragon",
@@ -126,6 +126,7 @@ function CycleTheme(direction)
         currentThemeIndex = #themes
     end
 
+    -- print(currentThemeIndex, themes[currentThemeIndex])
     ApplyTheme(themes[currentThemeIndex])
     saveThemeData()
 end
